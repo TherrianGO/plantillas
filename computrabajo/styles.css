@@ -1,0 +1,428 @@
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+  background: #f5fafc;
+  color: #12345c;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.45
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent
+}
+
+button {
+  font: inherit;
+  cursor: pointer
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 3px solid #007bc4;
+  outline-offset: 4px
+}
+
+.site-header {
+  max-width: 1060px;
+  margin: auto;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 30px
+}
+
+.wordmark {
+  position: relative;
+  text-decoration: none;
+  color: #123d7d;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+  line-height: 1.2
+}
+
+.wordmark span {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  width: 70px;
+  height: 17px;
+  border-bottom: 3px solid #ff8500;
+  border-radius: 50%;
+  transform: rotate(-5deg)
+}
+
+.header-label {
+  font-size: 14px;
+  color: #56677a
+}
+
+main {
+  max-width: 1000px;
+  padding: 10px 24px 0;
+  margin: auto
+}
+
+.offer {
+  background: #fff;
+  border: 1px solid #dce1e6;
+  border-radius: 11px;
+  padding: 25px 30px 35px
+}
+
+.offer-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px
+}
+
+h1 {
+  font-size: 23px;
+  line-height: 1.28;
+  color: #353d47;
+  margin: 0 0 4px;
+  font-weight: 700;
+  max-width: 700px
+}
+
+.company, .location {
+  margin: 3px 0
+}
+
+.company-logo {
+  width: 95px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 27px 0 24px
+}
+
+.apply {
+  border: 0;
+  border-radius: 32px;
+  min-height: 52px;
+  padding: 13px 35px;
+  background: #123d7d;
+  color: white;
+  font-size: 15px;
+  font-weight: 700
+}
+
+.apply:hover {
+  background: #092e63
+}
+
+.icon-button {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 50%;
+  background: #eaf4fc;
+  color: #124b83;
+  display: grid;
+  place-items: center
+}
+
+.icon-button:hover {
+  background: #dbeefc
+}
+
+svg {
+  height: 21px;
+  width: 21px;
+  flex-shrink: 0
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #dce1e6;
+  margin: 0 0 22px
+}
+
+h2 {
+  font-size: 17px;
+  line-height: 1.4;
+  color: #303943;
+  margin: 0 0 23px;
+  font-weight: 700
+}
+
+.summary {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 34px;
+  display: grid;
+  gap: 14px;
+  font-size: 15px
+}
+
+.summary li {
+  display: flex;
+  align-items: center;
+  gap: 18px
+}
+
+.summary svg {
+  width: 17px;
+  height: 17px
+}
+
+.description h2 {
+  margin-bottom: 25px
+}
+
+.description h3 {
+  font-size: 16px;
+  color: #303943;
+  margin: 28px 0 12px;
+  font-weight: 650
+}
+
+.description p {
+  margin: 0 0 20px
+}
+
+.description ul {
+  padding-left: 20px;
+  margin: 0 0 24px
+}
+
+.description li {
+  padding-left: 1px;
+  margin: 0 0 12px
+}
+
+.description p, .description li {
+  overflow-wrap: break-word
+}
+
+.bottom-action {
+  border-top: 1px solid #dce1e6;
+  padding-top: 25px;
+  margin-top: 26px
+}
+
+.academic {
+  text-align: center;
+  font-size: 12px;
+  color: #647382;
+  padding: 22px 20px 30px
+}
+
+.academic a {
+  color: #174778;
+  display: inline-block;
+  margin-top: 7px
+}
+
+dialog {
+  color: #12345c;
+  border: 0;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 440px;
+  width: calc(100% - 36px);
+  box-shadow: 0 20px 80px #0003
+}
+
+dialog::backdrop {
+  background: #17324d88
+}
+
+dialog h2 {
+  margin-bottom: 16px
+}
+
+.dialog-close {
+  float: right;
+  background: #eaf4fc;
+  border: 0;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-left: 12px
+}
+
+dialog p {
+  overflow-wrap: anywhere
+}
+
+@media(min-width:1250px) {
+  main {
+    max-width: 1060px
+  }
+  .offer {
+    padding: 28px 36px 38px
+  }
+}
+
+@media(max-width:600px) {
+  .site-header {
+    padding: 18px 18px;
+    min-height: 76px
+  }
+  .wordmark {
+    font-size: 23px
+  }
+  .header-label {
+    font-size: 12px
+  }
+  main {
+    padding: 6px 10px 0
+  }
+  .offer {
+    padding: 22px 19px 28px
+  }
+  .offer-heading {
+    gap: 12px
+  }
+  h1 {
+    font-size: 21px
+  }
+  .company-logo {
+    width: 65px;
+    height: 48px
+  }
+  .company, .location {
+    font-size: 14px
+  }
+  .toolbar {
+    gap: 8px;
+    flex-wrap: wrap
+  }
+  .apply {
+    padding: 13px 25px
+  }
+  .icon-button {
+    width: 44px;
+    height: 44px
+  }
+  .description {
+    font-size: 15px
+  }
+  h2 {
+    font-size: 17px
+  }
+}
+
+@media(max-width:360px) {
+  .header-label {
+    display: none
+  }
+  .company-logo {
+    width: 52px
+  }
+  .offer-heading {
+    gap: 8px
+  }
+  .toolbar {
+    gap: 6px
+  }
+  .apply {
+    padding: 13px 21px
+  }
+  .icon-button {
+    width: 40px;
+    height: 40px
+  }
+}
+
+/* Retorno al panel principal */
+.back-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 16px 0 16px 16px;
+  padding: 10px 16px;
+  border: 1px solid #d4dfe7;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #17324d;
+  font: 600 14px/1.4 "Segoe UI", Arial, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 2px 6px #17324d0a;
+}
+
+.back-panel:hover {
+  background: #e8f6f4;
+  border-color: #007e77;
+}
+
+.back-panel:focus-visible {
+  outline: 3px solid #007e77;
+  outline-offset: 4px;
+}
+
+.back-panel svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Retorno compacto junto al logo, expandible dentro del encabezado. */
+.site-header {
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.site-header .header-label {
+  margin-left: auto;
+}
+
+.site-header .back-panel {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 0;
+  margin: 0;
+  padding: 9px;
+  min-height: 40px;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.site-header .back-panel > span {
+  display: block;
+  max-width: 0;
+  margin-left: 0;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: max-width 260ms ease, margin-left 260ms ease, opacity 180ms ease;
+}
+
+.site-header .back-panel:hover > span, .site-header .back-panel:focus-visible > span {
+  max-width: 190px;
+  margin-left: 9px;
+  opacity: 1;
+}
+
+@media (max-width:600px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .site-header .header-label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .site-header .back-panel > span {
+    transition: none;
+  }
+}

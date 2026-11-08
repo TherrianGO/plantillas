@@ -1,0 +1,1656 @@
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+  color: #243746;
+  background: #f3f5f7;
+  font: 16px/1.6 "Segoe UI", Arial, sans-serif
+}
+
+button, a {
+  font: inherit
+}
+
+button {
+  cursor: pointer
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 3px solid #00a69c;
+  outline-offset: 4px
+}
+
+button {
+  border: 0;
+  border-radius: 7px;
+  padding: 10px 16px;
+  color: inherit;
+  background: #edf1f4
+}
+
+a {
+  color: #087a83
+}
+
+header.top {
+  background: white;
+  border-bottom: 1px solid #dde3e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px max(24px,calc((100% - 1160px)/2));
+  gap: 20px
+}
+
+header.top b {
+  font-size: 26px;
+  letter-spacing: -1px
+}
+
+header.top span {
+  font-size: 14px;
+  color: #65717c
+}
+
+.layout {
+  max-width: 1160px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 300px;
+  gap: 24px;
+  padding: 0 24px
+}
+
+.card {
+  background: white;
+  border: 1px solid #e0e5ea;
+  border-radius: 12px;
+  padding: 30px;
+  min-width: 0
+}
+
+.logo {
+  width: 110px;
+  height: 64px;
+  object-fit: contain;
+  background: white;
+  border-radius: 5px
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: -.7px;
+  color: #17324d;
+  margin: 20px 0
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.4;
+  color: #17324d;
+  margin: 28px 0 10px
+}
+
+p {
+  margin: 14px 0
+}
+
+.muted, small {
+  color: #697780
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0
+}
+
+.chips span {
+  background: #e8f6f4;
+  color: #087a73;
+  border-radius: 30px;
+  padding: 5px 13px;
+  font-size: 14px
+}
+
+.primary {
+  background: #00a69c;
+  color: white;
+  font-weight: 650;
+  padding: 13px 24px
+}
+
+.aside {
+  align-self: start;
+  position: sticky;
+  top: 24px
+}
+
+.aside h2 {
+  margin-top: 12px
+}
+
+.aside .primary {
+  width: 100%
+}
+
+.note {
+  text-align: center;
+  font-size: 12px;
+  color: #65717c;
+  padding: 22px
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px
+}
+
+.author .logo {
+  width: 64px;
+  height: 48px
+}
+
+.author strong {
+  display: block;
+  font-size: 15px
+}
+
+.author small {
+  display: block;
+  font-size: 12px
+}
+
+.dots {
+  margin-left: auto
+}
+
+.post {
+  padding: 0;
+  overflow: hidden
+}
+
+.copy {
+  padding: 0 24px 20px
+}
+
+.copy p:first-child {
+  margin-top: 0
+}
+
+.actions {
+  border-top: 1px solid #e4e8ec;
+  display: flex;
+  justify-content: space-around;
+  gap: 4px;
+  padding: 10px
+}
+
+.actions button {
+  background: white;
+  padding: 8px;
+  font-size: 14px
+}
+
+.feed {
+  max-width: 720px;
+  margin: 28px auto;
+  padding: 0 18px
+}
+
+.poster {
+  background: #17324d;
+  color: white;
+  position: relative;
+  overflow: hidden
+}
+
+.poster>.logo {
+  margin: 25px 30px;
+  width: 150px;
+  height: 78px;
+  padding: 4px
+}
+
+.poster-inner {
+  padding: 0 38px 32px;
+  position: relative
+}
+
+.poster h2 {
+  color: white;
+  font-size: 38px;
+  line-height: 1.13;
+  margin: 8px 0 16px;
+  max-width: 510px;
+  letter-spacing: -1px
+}
+
+.eyebrow {
+  color: #83e7da;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 3px
+}
+
+.hiring {
+  font-size: 18px;
+  margin: 20px 0 8px
+}
+
+.poster .location {
+  border-left: 3px solid #00a69c;
+  padding-left: 12px
+}
+
+.big-cx {
+  position: absolute;
+  right: -8px;
+  top: 110px;
+  font-size: 150px;
+  font-weight: 800;
+  opacity: .1;
+  line-height: 1;
+  pointer-events: none
+}
+
+.big-cx span {
+  color: #00a69c
+}
+
+.poster ul {
+  padding-left: 20px;
+  font-size: 14px;
+  max-width: 420px
+}
+
+.poster-benefits {
+  background: #00a69c;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 14px;
+  margin: 24px 0
+}
+
+.poster footer {
+  font-size: 13px;
+  overflow-wrap: anywhere
+}
+
+.poster footer strong {
+  color: #8ce7db
+}
+
+dialog {
+  max-width: 440px;
+  width: calc(100% - 36px);
+  border: 0;
+  border-radius: 14px;
+  padding: 28px;
+  color: #17324d;
+  box-shadow: 0 20px 80px #0004
+}
+
+dialog::backdrop {
+  background: #17324d99
+}
+
+dialog h2 {
+  margin-top: 0
+}
+
+.dialog-close {
+  float: right
+}
+
+.demo-caption {
+  font-size: 12px;
+  color: #65717c;
+  text-align: center;
+  padding: 10px;
+  margin: 0
+}
+
+.facebook .top b {
+  color: #0866ff
+}
+
+.facebook .feed {
+  max-width: 720px
+}
+
+.instagram {
+  background: #fafafa
+}
+
+.instagram .top b {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: #262626
+}
+
+.insta-layout {
+  max-width: 1100px;
+  margin: 32px auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  padding: 0 24px
+}
+
+.insta-layout>.poster {
+  border-radius: 12px 0 0 12px
+}
+
+.insta-layout>.post {
+  border-radius: 0 12px 12px 0
+}
+
+.instagram .poster h2 {
+  font-size: 40px
+}
+
+.instagram .poster-inner {
+  padding-bottom: 40px
+}
+
+.instagram .copy {
+  font-size: 14px
+}
+
+.instagram .author {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px
+}
+
+.instagram .actions {
+  justify-content: flex-start
+}
+
+.whatsapp {
+  background: #eae6df
+}
+
+.whatsapp .top {
+  background: #075e54;
+  color: white
+}
+
+.whatsapp header.top span {
+  color: #dbf3ec
+}
+
+.chat {
+  max-width: 820px;
+  margin: 26px auto;
+  background: #e5ddd5;
+  border: 1px solid #d5cec6;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px #17324d10
+}
+
+.chat-header {
+  padding: 15px 24px;
+  background: #f0f2f5;
+  display: flex;
+  gap: 12px;
+  align-items: center
+}
+
+.avatar {
+  background: #00a69c;
+  color: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center
+}
+
+.chat-body {
+  padding: 24px;
+  background-image: radial-gradient(#b7b1a84d .7px,transparent .7px);
+  background-size: 18px 18px
+}
+
+.bubble {
+  max-width: 600px;
+  padding: 7px;
+  background: #fff;
+  border-radius: 0 10px 10px;
+  box-shadow: 0 2px 3px #0001
+}
+
+.forward {
+  font-size: 12px;
+  font-style: italic;
+  color: #6f7c82;
+  padding: 5px 10px
+}
+
+.bubble .poster {
+  border-radius: 6px
+}
+
+.bubble .poster h2 {
+  font-size: 32px
+}
+
+.bubble .copy {
+  padding: 16px;
+  font-size: 14px
+}
+
+.chat .primary {
+  margin: 0 16px 16px;
+  background: #075e54
+}
+
+.linkedin .top b {
+  color: #0a66c2
+}
+
+.linkedin .layout {
+  grid-template-columns: 220px minmax(0,680px) 220px;
+  max-width: 1200px;
+  gap: 18px
+}
+
+.linkedin .profile {
+  text-align: center;
+  padding: 20px
+}
+
+.linkedin .profile .logo {
+  width: 150px;
+  height: 90px
+}
+
+.linkedin .copy {
+  font-size: 15px
+}
+
+.linkedin .banner {
+  background: #17324d;
+  color: white;
+  padding: 24px
+}
+
+.linkedin .banner h2 {
+  color: white;
+  margin: 8px 0;
+  font-size: 25px
+}
+
+.linkedin .banner span {
+  color: #82e4d8
+}
+
+.linkedin .primary {
+  background: #0a66c2
+}
+
+.computrabajo .top {
+  background: #063b72;
+  color: white
+}
+
+.computrabajo header.top span {
+  color: #d7e6f4
+}
+
+.computrabajo .primary {
+  background: #0066bd
+}
+
+.bumeran .top b {
+  color: #6225a5
+}
+
+.bumeran .layout {
+  max-width: 1100px
+}
+
+.bumeran .job-summary {
+  border-top: 5px solid #7f3bb7
+}
+
+.bumeran .primary {
+  background: #6e35a6;
+  border-radius: 30px
+}
+
+.bumeran .chips span {
+  background: #f3edfa;
+  color: #673696
+}
+
+.bumeran h1 {
+  font-size: 34px
+}
+
+.bumeran .details {
+  margin-top: 24px
+}
+
+.bumeran .card {
+  border-radius: 18px
+}
+
+.breadcrumb {
+  max-width: 1112px;
+  margin: 24px auto -10px;
+  font-size: 13px;
+  padding: 0 24px
+}
+
+.section-kicker {
+  color: #00a69c;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700
+}
+
+@media(max-width:850px) {
+  .layout, .linkedin .layout {
+    grid-template-columns: minmax(0,1fr)
+  }
+  .aside {
+    position: static
+  }
+  .linkedin .profile, .linkedin .related {
+    display: none
+  }
+  .insta-layout {
+    grid-template-columns: minmax(0,1fr);
+    max-width: 650px
+  }
+  .insta-layout>.poster {
+    border-radius: 12px 12px 0 0
+  }
+  .insta-layout>.post {
+    border-radius: 0 0 12px 12px
+  }
+}
+
+@media(max-width:480px) {
+  header.top {
+    padding: 14px 18px
+  }
+  header.top span {
+    font-size: 12px
+  }
+  header.top b {
+    font-size: 23px
+  }
+  .layout {
+    padding: 0 12px;
+    margin: 20px auto;
+    gap: 14px
+  }
+  .card {
+    padding: 22px
+  }
+  h1, .bumeran h1 {
+    font-size: 27px
+  }
+  .post {
+    padding: 0
+  }
+  .author {
+    padding: 16px;
+    gap: 8px
+  }
+  .author strong {
+    font-size: 13px
+  }
+  .poster>.logo {
+    margin: 22px 24px;
+    width: 130px;
+    height: 68px
+  }
+  .poster-inner {
+    padding: 0 24px 26px
+  }
+  .poster h2, .instagram .poster h2 {
+    font-size: 31px
+  }
+  .feed {
+    padding: 0 10px
+  }
+  .insta-layout {
+    padding: 0 10px;
+    margin: 20px auto
+  }
+  .copy {
+    padding: 0 18px 16px
+  }
+  .chat {
+    margin: 12px 8px
+  }
+  .chat-body {
+    padding: 14px
+  }
+  .bubble .poster h2 {
+    font-size: 26px
+  }
+  .bubble .poster-inner {
+    padding: 0 18px 22px
+  }
+  .bubble .poster>.logo {
+    margin: 18px
+  }
+  .actions button {
+    font-size: 12px;
+    padding: 8px 5px
+  }
+  .note {
+    padding: 18px
+  }
+  button {
+    min-height: 40px
+  }
+}
+
+.primary {
+  background: #007e77
+}
+
+.poster-benefits {
+  color: #17324d;
+  font-weight: 600
+}
+
+.section-kicker {
+  color: #087a73
+}
+
+p, li {
+  overflow-wrap: break-word
+}
+
+.top {
+  flex-wrap: wrap
+}
+
+dialog p {
+  overflow-wrap: anywhere
+}
+
+/* Retorno al panel principal */
+.back-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 16px 0 16px 16px;
+  padding: 10px 16px;
+  border: 1px solid #d4dfe7;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #17324d;
+  font: 600 14px/1.4 "Segoe UI", Arial, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 2px 6px #17324d0a;
+}
+
+.back-panel:hover {
+  background: #e8f6f4;
+  border-color: #007e77;
+}
+
+.back-panel:focus-visible {
+  outline: 3px solid #007e77;
+  outline-offset: 4px;
+}
+
+.back-panel svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Retorno integrado en el encabezado */
+header.top .back-panel {
+  margin: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+@media (max-width:480px) {
+  header.top {
+    gap: 10px;
+  }
+  header.top > span {
+    display: none;
+  }
+  header.top .back-panel {
+    padding: 7px 9px;
+    font-size: 12px;
+    gap: 6px;
+  }
+}
+
+/* Entorno de Facebook, inspirado en la referencia del usuario. */
+body.facebook {
+  background: #f0f2f5;
+  color: #1c1e21;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px
+}
+
+.fb-header {
+  height: 62px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  box-shadow: 0 1px 4px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  gap: 18px
+}
+
+.fb-left, .fb-tools, .fb-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px
+}
+
+.fb-left {
+  flex: 1;
+  min-width: 0
+}
+
+.fb-brand {
+  background: #0866ff;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font: bold 44px/1 Arial;
+  text-decoration: none;
+  padding-top: 7px;
+  overflow: hidden;
+  flex-shrink: 0
+}
+
+.fb-back, .round {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e4e6eb;
+  color: #25282d;
+  display: grid;
+  place-items: center;
+  padding: 9px;
+  flex-shrink: 0
+}
+
+.fb-back svg, .fb-header svg {
+  width: 23px;
+  height: 23px
+}
+
+.fb-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #f0f2f5;
+  border-radius: 30px;
+  color: #65676b;
+  padding: 10px 14px;
+  white-space: nowrap;
+  font-size: 14px
+}
+
+.fb-search svg {
+  width: 18px;
+  height: 18px
+}
+
+.fb-tabs {
+  height: 100%;
+  gap: 10px;
+  flex: 1;
+  justify-content: center
+}
+
+.fb-tabs button {
+  height: 100%;
+  width: 110px;
+  background: white;
+  color: #65676b;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  padding: 12px
+}
+
+.fb-tabs button.selected {
+  color: #0866ff;
+  border-bottom-color: #0866ff
+}
+
+.fb-tabs button:hover {
+  background: #f0f2f5
+}
+
+.fb-tools {
+  flex: 1;
+  justify-content: flex-end
+}
+
+.friends {
+  background: #e4e6eb;
+  font-size: 13px;
+  font-weight: 650;
+  border-radius: 24px;
+  padding: 9px 14px;
+  white-space: nowrap
+}
+
+.profile-icon {
+  color: #757a80;
+  font-size: 24px
+}
+
+.fb-sidebar {
+  position: fixed;
+  top: 78px;
+  left: 8px;
+  bottom: 15px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow: auto
+}
+
+.fb-sidebar button, .sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 9px 8px;
+  min-height: 52px;
+  background: transparent;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 550;
+  border-radius: 8px
+}
+
+.fb-sidebar button:hover {
+  background: #e4e6e9
+}
+
+.side-symbol {
+  width: 32px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 28px;
+  color: #087eef;
+  line-height: 1
+}
+
+.side-avatar {
+  background: #e0e3e7;
+  border: 1px solid #cbd0d5;
+  color: #777d82;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 24px
+}
+
+.sidebar-note {
+  margin-top: auto;
+  padding: 22px 6px 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #65676b
+}
+
+.facebook .feed {
+  max-width: 680px;
+  padding: 0;
+  margin: 22px auto
+}
+
+.facebook .post {
+  border: 1px solid #e3e5e8;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px #0002
+}
+
+.facebook .author {
+  padding: 12px 12px 6px;
+  gap: 9px;
+  align-items: flex-start
+}
+
+.facebook .author .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #dce2e7;
+  object-fit: contain;
+  padding: 2px
+}
+
+.facebook .author strong {
+  font-size: 14px;
+  color: #151719;
+  font-weight: 650
+}
+
+.facebook .author small {
+  font-size: 12px;
+  color: #65676b
+}
+
+.post-menu {
+  margin-left: auto;
+  background: transparent;
+  color: #65676b;
+  letter-spacing: 1px;
+  padding: 0 8px;
+  font-size: 20px;
+  min-height: 32px
+}
+
+.facebook .post-copy {
+  padding: 0 12px 12px
+}
+
+.facebook .post-copy>p {
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 3px 0 7px;
+  font-weight: 400
+}
+
+.read-more {
+  display: flex;
+  flex-direction: column
+}
+
+.read-more summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 650;
+  width: fit-content;
+  min-height: 28px;
+  line-height: 28px
+}
+
+.read-more summary::-webkit-details-marker {
+  display: none
+}
+
+.read-more summary:hover {
+  text-decoration: underline
+}
+
+.read-more summary:focus-visible {
+  outline: 3px solid #0866ff;
+  outline-offset: 3px
+}
+
+.show-less {
+  display: none
+}
+
+.read-more[open] .show-more {
+  display: none
+}
+
+.read-more[open] .show-less {
+  display: inline
+}
+
+.expanded-copy p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 0
+}
+
+.expanded-copy h2 {
+  font-size: 15px;
+  margin: 18px 0 8px
+}
+
+.facebook .primary {
+  background: #0866ff;
+  margin: 10px 0 4px
+}
+
+.facebook .poster {
+  border-radius: 0;
+  margin: 0
+}
+
+.facebook .poster>.logo {
+  width: 160px;
+  height: 90px;
+  margin: 28px 38px 20px
+}
+
+.facebook .poster-inner {
+  padding: 0 38px 35px
+}
+
+.facebook .poster h2 {
+  font-size: 40px;
+  max-width: 530px
+}
+
+.facebook .poster .eyebrow {
+  font-size: 12px
+}
+
+.facebook .poster .hiring {
+  margin-top: 14px
+}
+
+.facebook .poster .big-cx {
+  font-size: 190px;
+  right: 0;
+  top: 125px
+}
+
+.facebook .poster-benefits {
+  color: #17324d
+}
+
+.post-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 16px;
+  color: #65676b;
+  font-size: 12px
+}
+
+.facebook .actions {
+  margin: 0 12px;
+  padding: 4px 0;
+  border-top: 1px solid #dddfe2;
+  gap: 4px
+}
+
+.facebook .actions button {
+  flex: 1;
+  color: #65676b;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  min-height: 40px
+}
+
+.facebook .actions button:hover {
+  background: #f0f2f5
+}
+
+.facebook>.note {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+  font-size: 11px
+}
+
+.facebook .note a {
+  color: #65676b
+}
+
+@media(min-width:1101px) and (max-width:1450px) {
+  .facebook .feed, .facebook>.note {
+    margin-left: calc(290px + (100% - 290px - 680px)/2);
+    margin-right: 0
+  }
+  .fb-tabs button {
+    width: 80px
+  }
+  .fb-search {
+    max-width: 220px
+  }
+  .fb-search span {
+    overflow: hidden;
+    text-overflow: ellipsis
+  }
+  .fb-sidebar {
+    width: 260px
+  }
+}
+
+@media(max-width:1100px) {
+  .fb-sidebar {
+    display: none
+  }
+  .fb-search span {
+    display: none
+  }
+  .fb-search {
+    padding: 10px
+  }
+  .fb-tabs button {
+    width: 75px
+  }
+  .friends {
+    display: none
+  }
+  .facebook .feed {
+    margin-top: 18px
+  }
+}
+
+@media(max-width:700px) {
+  .fb-header {
+    gap: 8px;
+    height: 60px;
+    padding: 0 8px
+  }
+  .fb-tabs {
+    display: none
+  }
+  .fb-tools {
+    flex: 0;
+    gap: 5px
+  }
+  .fb-tools .round:first-of-type {
+    display: none
+  }
+  .fb-left {
+    gap: 6px
+  }
+  .facebook .feed {
+    margin: 12px auto;
+    padding: 0 8px
+  }
+  .facebook .poster h2 {
+    font-size: 33px
+  }
+  .facebook .poster>.logo {
+    margin: 24px 26px 18px;
+    width: 140px;
+    height: 80px
+  }
+  .facebook .poster-inner {
+    padding: 0 26px 28px
+  }
+  .facebook .author strong {
+    font-size: 13px
+  }
+  .facebook .actions button {
+    font-size: 13px
+  }
+  .facebook .poster ul {
+    font-size: 14px
+  }
+}
+
+@media(max-width:380px) {
+  .fb-tools .profile-icon {
+    display: none
+  }
+  .fb-header .round, .fb-back {
+    width: 36px;
+    height: 36px
+  }
+  .facebook .poster h2 {
+    font-size: 29px
+  }
+  .facebook .poster-inner {
+    padding: 0 20px 24px
+  }
+  .facebook .poster>.logo {
+    margin-left: 20px
+  }
+  .facebook .author strong {
+    font-size: 12px
+  }
+}
+
+/* Foto personal en los dos espacios del perfil de usuario. */
+.fb-tools .profile-icon {
+  padding: 0;
+  overflow: hidden;
+}
+
+.user-avatar {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.fb-tools .profile-icon .user-avatar {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-profile .user-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+/* Acciones de publicación con iconos vectoriales de trazo gris. */
+.facebook .actions button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #65676b;
+  padding: 8px 4px;
+  line-height: 1.3;
+}
+
+.facebook .actions .post-action-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+@media (max-width:380px) {
+  .facebook .actions button {
+    font-size: 12px;
+    gap: 5px;
+  }
+  .facebook .actions .post-action-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Franja compacta de interacciones, basada en la referencia. */
+.engagement {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 12px 22px;
+  background: #fff;
+}
+
+.engagement-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  padding: 0;
+  background: transparent;
+  color: #65676b;
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.engagement-item:hover {
+  color: #0866ff;
+}
+
+.engagement .post-action-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.reaction-stack {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-left: 6px;
+}
+
+.laugh-reaction {
+  font-size: 27px;
+  line-height: 1;
+  z-index: 1;
+}
+
+.like-reaction {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  margin-left: -2px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #1687ff;
+  color: white;
+}
+
+.like-reaction .post-action-icon {
+  width: 17px;
+  height: 17px;
+  fill: white;
+  stroke-width: 1;
+}
+
+.sample-metrics {
+  margin: 0;
+  padding: 0 22px 9px;
+  color: #65676b;
+  font-size: 10px;
+}
+
+@media (max-width:480px) {
+  .engagement {
+    padding: 10px 12px;
+    gap: 16px;
+  }
+  .engagement-item {
+    font-size: 14px;
+    gap: 6px;
+  }
+  .engagement .post-action-icon {
+    width: 23px;
+    height: 23px;
+  }
+  .laugh-reaction {
+    font-size: 23px;
+  }
+  .like-reaction {
+    width: 25px;
+    height: 25px;
+  }
+  .like-reaction .post-action-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .sample-metrics {
+    padding-left: 12px;
+  }
+}
+
+@media (max-width:360px) {
+  .engagement {
+    gap: 10px;
+  }
+  .engagement-item {
+    font-size: 12px;
+    gap: 4px;
+  }
+}
+
+.heart-reaction {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #f33e58;
+  color: #fff;
+  font: 22px/1 Arial, sans-serif;
+  z-index: 1;
+}
+
+@media (max-width:480px) {
+  .heart-reaction {
+    width: 25px;
+    height: 25px;
+    font-size: 19px;
+  }
+}
+
+/* Fotografía humana para la convocatoria de Facebook. */
+.recruitment-photo {
+  position: relative;
+  margin: 0;
+}
+
+.recruitment-photo > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.recruitment-photo figcaption {
+  position: absolute;
+  right: 10px;
+  bottom: 9px;
+  max-width: calc(100% - 20px);
+  background: #17324de6;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+.facebook .poster > .logo {
+  margin-top: 24px;
+}
+
+/* Fotografía y contenido forman una sola pieza de convocatoria. */
+.recruitment-hero {
+  position: relative;
+  min-height: 570px;
+  isolation: isolate;
+  overflow: hidden;
+  background: #17324d;
+}
+
+.hero-people {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: -3;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #17324d08 28%, #17324d40 47%, #17324ded 76%, #17324d 100%);
+  z-index: -2;
+}
+
+.hero-logo {
+  position: absolute;
+  left: 28px;
+  top: 24px;
+  width: 140px;
+  height: 87px;
+  object-fit: contain;
+  padding: 6px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 3px 16px #17324d22;
+}
+
+.hero-copy {
+  position: absolute;
+  bottom: 12px;
+  left: 38px;
+  right: 38px;
+}
+
+.hero-kicker {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #00a69c;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  font-weight: 750;
+  border-radius: 4px;
+}
+
+.facebook .hero-copy h2 {
+  font-size: 38px;
+  line-height: 1.1;
+  letter-spacing: -.8px;
+  margin: 15px 0;
+  color: #fff;
+  max-width: 550px;
+}
+
+.hero-copy p {
+  font-size: 14px;
+  color: #c9f3ef;
+  margin: 10px 0 0;
+}
+
+.facebook .poster .poster-inner {
+  padding-top: 14px;
+}
+
+.facebook .poster .poster-inner > .eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.facebook .poster .poster-inner > p {
+  margin: 10px 0 16px;
+}
+
+.simulation-credit {
+  display: inline-block;
+  color: #c0ccd6;
+  font-size: 9px;
+  margin-top: 10px;
+}
+
+@media (max-width:700px) {
+  .recruitment-hero {
+    min-height: 515px;
+  }
+  .hero-copy {
+    left: 26px;
+    right: 26px;
+  }
+  .hero-logo {
+    left: 24px;
+    top: 22px;
+    width: 120px;
+    height: 75px;
+  }
+  .facebook .hero-copy h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width:400px) {
+  .recruitment-hero {
+    min-height: 460px;
+  }
+  .hero-copy {
+    left: 20px;
+    right: 20px;
+  }
+  .facebook .hero-copy h2 {
+    font-size: 28px;
+  }
+  .hero-kicker {
+    font-size: 10px;
+    letter-spacing: .6px;
+  }
+  .hero-copy p {
+    font-size: 12px;
+  }
+}
+
+/* Retorno expandible dentro de la barra de Facebook. */
+.fb-header .fb-back {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  min-width: 40px;
+  height: 40px;
+  padding: 9px;
+  gap: 0;
+  border-radius: 24px;
+  text-decoration: none;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.fb-back > span {
+  max-width: 0;
+  margin-left: 0;
+  overflow: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  transition: max-width 260ms ease, margin-left 260ms ease, opacity 180ms ease;
+}
+
+.fb-back:hover > span, .fb-back:focus-visible > span {
+  max-width: 190px;
+  margin-left: 9px;
+  opacity: 1;
+}
+
+/* La barra se redistribuye al crecer el retorno. */
+.fb-header .fb-left {
+  flex-shrink: 0;
+}
+
+@media (max-width:700px) {
+  .fb-header {
+    height: auto;
+    min-height: 60px;
+    flex-wrap: wrap;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .fb-left {
+    flex-wrap: wrap;
+  }
+  .fb-header .fb-back:hover ~ .fb-search, .fb-header .fb-back:focus-visible ~ .fb-search {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .fb-back > span {
+    transition: none;
+  }
+}
+
+/* Estado verde institucional del retorno expandido. */
+.fb-header .fb-back {
+  border: 1px solid #d4dfe7;
+  background: #ffffff;
+  color: #17324d;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.fb-header .fb-back:hover, .fb-header .fb-back:focus-visible {
+  background: #e8f6f4;
+  border-color: #007e77;
+  color: #17324d;
+}
+
+.fb-header .fb-back:focus-visible {
+  outline: 3px solid #007e77;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .fb-header .fb-back {
+    transition: none;
+  }
+}

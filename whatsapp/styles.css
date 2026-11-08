@@ -1,0 +1,814 @@
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+  color: #111b21;
+  background: #f7f5f3;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif
+}
+
+button, a {
+  font: inherit
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  background: none;
+  padding: 0
+}
+
+button:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 3px solid #007e77;
+  outline-offset: 3px
+}
+
+button:hover {
+  background: #f0f2f5
+}
+
+svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: block
+}
+
+.app-title {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  font-size: 12px
+}
+
+.wa-mark {
+  color: #00a884;
+  font-size: 24px
+}
+
+.simulation {
+  margin-left: auto;
+  font-size: 11px;
+  color: #667781
+}
+
+.wa-app {
+  height: calc(100dvh - 40px);
+  display: grid;
+  grid-template-columns: 58px 360px minmax(0,1fr);
+  border-top: 1px solid #e2e2e2
+}
+
+.rail {
+  background: #f7f5f3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 0;
+  border-right: 1px solid #e3e3e3;
+  z-index: 5
+}
+
+.rail button, .rail>a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #66716f
+}
+
+.rail .active {
+  background: #e7e7e6;
+  color: #111b21
+}
+
+.rail-bottom {
+  margin-top: auto;
+  display: grid;
+  gap: 12px
+}
+
+.rail img {
+  width: 29px;
+  height: 29px;
+  object-fit: cover;
+  border-radius: 50%
+}
+
+.rail .wa-back {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  gap: 0;
+  width: auto;
+  min-width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  padding: 9px;
+  border: 1px solid #d4dfe7;
+  border-radius: 24px;
+  background: #fff;
+  color: #17324d;
+  text-decoration: none;
+  overflow: hidden;
+  flex-shrink: 0
+}
+
+.wa-back span {
+  max-width: 0;
+  opacity: 0;
+  margin-left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 600;
+  transition: max-width .26s ease, margin-left .26s ease, opacity .18s ease
+}
+
+.rail .wa-back:hover, .rail .wa-back:focus-visible {
+  background: #e8f6f4;
+  border-color: #007e77
+}
+
+.wa-back:hover span, .wa-back:focus-visible span {
+  max-width: 190px;
+  opacity: 1;
+  margin-left: 9px
+}
+
+.chat-list {
+  background: white;
+  border-right: 1px solid #dedede;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden
+}
+
+.list-heading {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 23px;
+  margin: 0 auto 0 0
+}
+
+.list-heading button {
+  min-width: 32px;
+  min-height: 38px;
+  display: grid;
+  place-items: center
+}
+
+.list-heading .new-chat {
+  background: #19ad68;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: #f5f5f5;
+  border-radius: 25px;
+  margin: 0 20px 10px;
+  padding: 11px 15px;
+  text-align: left;
+  color: #667781;
+  font-size: 12px
+}
+
+.search svg {
+  width: 18px;
+  height: 18px
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px 14px
+}
+
+.filters button {
+  border: 1px solid #d1d4d6;
+  border-radius: 20px;
+  padding: 5px 12px;
+  color: #54656f;
+  font-size: 13px
+}
+
+.filters .chosen {
+  background: #d9fdd3;
+  border-color: #b2d7ad;
+  color: #164e39
+}
+
+.contacts {
+  overflow: auto;
+  padding: 0 10px
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 12px;
+  min-height: 80px;
+  width: 100%;
+  text-align: left;
+  border-radius: 10px
+}
+
+.contact.selected {
+  background: #f0f2f5
+}
+
+.contact-avatar {
+  width: 47px;
+  height: 47px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  font-weight: 600
+}
+
+.color-0 {
+  background: #d2f3e7;
+  color: #08744f
+}
+
+.color-1 {
+  background: #ffe0eb;
+  color: #b64571
+}
+
+.color-2 {
+  background: #dde9fd;
+  color: #3e67a5
+}
+
+.color-3 {
+  background: #f3e5cd;
+  color: #8c6e3d
+}
+
+.contact-copy {
+  min-width: 0
+}
+
+.contact strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.contact small {
+  display: block;
+  font-size: 13px;
+  color: #667781;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.list-note {
+  text-align: center;
+  font-size: 11px;
+  color: #667781;
+  margin: auto 0 0;
+  padding: 14px
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0
+}
+
+.conversation-header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 18px
+}
+
+.conversation-header>img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  padding: 2px
+}
+
+.conversation-header strong {
+  font-size: 16px;
+  font-weight: 500
+}
+
+.conversation-header small {
+  display: block;
+  font-size: 12px;
+  color: #667781;
+  margin-top: 2px
+}
+
+.conversation-header button {
+  padding: 8px;
+  flex-shrink: 0
+}
+
+.conversation-header button:first-of-type {
+  margin-left: auto
+}
+
+.conversation-scroll {
+  flex: 1;
+  overflow: auto;
+  padding: 30px 5% 35px;
+  background: #f7f3ed url('../assets/whatsapp-pattern.svg') repeat;
+  min-height: 0
+}
+
+.privacy-note {
+  width: fit-content;
+  max-width: 90%;
+  margin: 12px auto 20px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #fffdf9;
+  color: #667781;
+  font-size: 11px;
+  text-align: center;
+  box-shadow: 0 1px 1px #0001
+}
+
+.day-label {
+  width: fit-content;
+  background: #fffdf9;
+  margin: 0 auto 25px;
+  padding: 5px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 1px #0001
+}
+
+.bubble {
+  position: relative;
+  width: min(100%,390px);
+  background: white;
+  padding: 5px;
+  border-radius: 0 8px 8px;
+  box-shadow: 0 1px 2px #0002
+}
+
+.bubble:before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 0;
+  border-top: 10px solid white;
+  border-left: 10px solid transparent
+}
+
+.sender {
+  font-size: 12px;
+  color: #087e63;
+  font-weight: 650;
+  padding: 3px 5px
+}
+
+.forward {
+  font-size: 11px;
+  font-style: italic;
+  color: #869399;
+  padding: 1px 5px 7px
+}
+
+.poster {
+  background: #17324d;
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative
+}
+
+.poster>.logo {
+  width: 115px;
+  height: 72px;
+  object-fit: contain;
+  background: white;
+  border-radius: 4px;
+  padding: 4px;
+  margin: 20px 20px 15px
+}
+
+.poster-inner {
+  padding: 0 20px 24px;
+  position: relative
+}
+
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  color: #90e7dc;
+  font-weight: 700
+}
+
+.hiring {
+  font-size: 14px;
+  margin: 12px 0 7px
+}
+
+.poster h2 {
+  font-size: 28px;
+  line-height: 1.12;
+  margin: 8px 0 15px;
+  letter-spacing: -.5px
+}
+
+.poster p {
+  margin: 13px 0
+}
+
+.poster .location {
+  font-size: 11px;
+  border-left: 3px solid #00a69c;
+  padding-left: 8px
+}
+
+.big-cx {
+  position: absolute;
+  right: 0;
+  top: 120px;
+  font-size: 120px;
+  line-height: 1;
+  font-weight: 800;
+  opacity: .1
+}
+
+.big-cx span {
+  color: #00a69c
+}
+
+.poster ul {
+  padding-left: 16px;
+  font-size: 11px;
+  line-height: 1.6
+}
+
+.poster-benefits {
+  background: #00a69c;
+  color: #17324d;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 650;
+  margin: 20px 0
+}
+
+.poster footer {
+  font-size: 10px;
+  line-height: 1.7;
+  overflow-wrap: anywhere
+}
+
+.poster footer strong {
+  color: #90e7dc
+}
+
+.copy {
+  padding: 1px 6px 8px;
+  font-size: 13px;
+  line-height: 1.45
+}
+
+.copy p {
+  margin: 8px 0 14px;
+  overflow-wrap: break-word
+}
+
+.copy>p {
+  font-weight: 650
+}
+
+.copy h2 {
+  font-size: 14px;
+  margin: 18px 0 10px
+}
+
+.message-details summary {
+  color: #007e77;
+  cursor: pointer;
+  min-height: 26px;
+  width: fit-content;
+  list-style: none
+}
+
+.message-details summary::-webkit-details-marker {
+  display: none
+}
+
+.message-cta {
+  border-top: 1px solid #e7e7e7;
+  color: #007e77;
+  display: block;
+  min-height: 44px;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px
+}
+
+.conversation-footer {
+  background: #f7f5f3;
+  text-align: center;
+  padding: 18px 12px;
+  color: #667781;
+  font-size: 12px
+}
+
+dialog {
+  color: #17324d;
+  border: 0;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 440px;
+  width: calc(100% - 36px);
+  box-shadow: 0 20px 80px #0003
+}
+
+dialog::backdrop {
+  background: #17324d88
+}
+
+dialog h2 {
+  font-size: 20px
+}
+
+.dialog-close {
+  float: right;
+  background: #eee;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-left: 12px
+}
+
+dialog p {
+  overflow-wrap: anywhere
+}
+
+@media(max-width:1100px) {
+  .wa-app {
+    grid-template-columns: 58px 290px minmax(0,1fr)
+  }
+  .search {
+    margin-left: 12px;
+    margin-right: 12px;
+    gap: 8px;
+    font-size: 11px
+  }
+  .filters {
+    padding-left: 12px;
+    gap: 6px
+  }
+  .filters button {
+    font-size: 12px;
+    padding: 5px 9px
+  }
+  .contact {
+    gap: 10px;
+    padding: 13px 8px
+  }
+  .contact strong {
+    font-size: 14px
+  }
+  .conversation-scroll {
+    padding-left: 24px;
+    padding-right: 24px
+  }
+}
+
+@media(max-width:760px) {
+  .wa-app {
+    grid-template-columns: 52px minmax(0,1fr)
+  }
+  .chat-list {
+    display: none
+  }
+  .conversation-header {
+    padding: 10px 12px;
+    gap: 10px
+  }
+  .conversation-header strong {
+    font-size: 14px
+  }
+  .conversation-header small {
+    font-size: 10px
+  }
+  .conversation-header button {
+    padding: 5px
+  }
+  .conversation-header>img {
+    width: 36px;
+    height: 36px
+  }
+  .rail .wa-back {
+    margin-left: 5px
+  }
+  .conversation-scroll {
+    padding: 16px 18px 25px
+  }
+  .privacy-note {
+    max-width: 100%;
+    margin-top: 0;
+    font-size: 10px
+  }
+  .day-label {
+    margin-bottom: 20px
+  }
+  .conversation-footer {
+    font-size: 10px;
+    padding: 13px 8px
+  }
+}
+
+@media(max-width:400px) {
+  .conversation-header button:first-of-type {
+    display: none
+  }
+  .conversation-header {
+    gap: 7px
+  }
+  .conversation-header strong {
+    font-size: 12px
+  }
+  .conversation-header small {
+    font-size: 9px
+  }
+  .conversation-scroll {
+    padding: 12px
+  }
+  .poster h2 {
+    font-size: 24px
+  }
+  .poster-inner {
+    padding: 0 15px 20px
+  }
+  .poster>.logo {
+    margin-left: 15px;
+    width: 105px;
+    height: 65px
+  }
+  .poster ul, .poster-benefits {
+    font-size: 10px
+  }
+  .app-title {
+    padding-right: 8px
+  }
+  .simulation {
+    font-size: 10px
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .wa-back span {
+    transition: none
+  }
+}
+
+/* Imagen humana integrada en la pieza compartida. */
+.wa-recruitment-hero {
+  position: relative;
+  min-height: 455px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #17324d;
+}
+
+.wa-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: -3;
+}
+
+.wa-hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,#17324d00 30%,#17324d30 49%,#17324de8 76%,#17324d 100%);
+  z-index: -2;
+}
+
+.wa-hero-logo {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  width: 105px;
+  height: 67px;
+  object-fit: contain;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 12px #17324d22;
+}
+
+.wa-hero-copy {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 8px;
+}
+
+.wa-hero-kicker {
+  display: inline-block;
+  background: #007e77;
+  color: white;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: .6px;
+  padding: 5px 8px;
+}
+
+.poster .wa-hero-copy h2 {
+  font-size: 27px;
+  line-height: 1.12;
+  margin: 12px 0;
+  color: white;
+}
+
+.poster .wa-hero-copy p {
+  font-size: 11px;
+  color: #c9f3ef;
+  margin: 8px 0 0;
+}
+
+.poster .poster-inner {
+  padding-top: 12px;
+}
+
+.wa-simulation-credit {
+  display: inline-block;
+  color: #c0ccd6;
+  font-size: 8px;
+  margin-top: 9px;
+}
+
+@media (max-width:400px) {
+  .wa-recruitment-hero {
+    min-height: 405px;
+  }
+  .wa-hero-copy {
+    left: 15px;
+    right: 15px;
+  }
+  .poster .wa-hero-copy h2 {
+    font-size: 23px;
+  }
+  .wa-hero-logo {
+    left: 15px;
+    width: 93px;
+    height: 60px;
+  }
+  .wa-hero-kicker {
+    font-size: 8px;
+  }
+}
+
+.app-title .wa-mark {
+  display: block;
+  width: 21px;
+  height: 21px;
+  color: #00a884;
+  flex-shrink: 0;
+}
